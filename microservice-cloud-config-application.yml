@@ -8,7 +8,7 @@ spring:
 
 
 spring:
-  profiles: dev #开发环境
+  profiles: dev #开发环境dev
    applications:
      name: microservice-cloud-config-dev
 
@@ -16,6 +16,6 @@ server:
   port: 55655
 
 spring:
-  profiles: test #测试环境
+  profiles: test #测试环境test
    applications:
      name: microservice-cloud-config-test
