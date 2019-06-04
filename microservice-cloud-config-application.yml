@@ -8,10 +8,3 @@ spring:
  profiles: dev
   application:
    name: microservice-cloud-config-dev
- ---
-server:
- port: 50002
-spring:
- profiles: test
-  application:
-   name: microservice-cloud-config-test
