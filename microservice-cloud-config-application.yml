@@ -2,17 +2,16 @@ spring:
  profiles:
   active: dev
 ---
-
 server:
  port: 50001
 spring:
  profiles: dev
-  application:
+  applications:
    name: microservice-cloud-config-dev
 ---
 server:
  port: 50002
 spring:
  profiles: test
-  application:
+  applications:
    name: microservice-cloud-config-test
