@@ -1,18 +1,5 @@
-﻿#注意，如果在记事本上面进行编辑，下面你的缩进不能使用tab 键，否则报错
-spring:
-  profiles:
-    active: dev
----
-server:
-  port: 50001
-spring:
-  profiles: dev #开发环境
-    applications:
-      name: microservice-cloud-config-dev
----
-server:
+﻿server:
   port: 50002
 spring:
-  profiles: test #测试环境
-    applications:
-      name: microservice-cloud-config-test
+  applications:
+    name: microservice-cloud-config-test
