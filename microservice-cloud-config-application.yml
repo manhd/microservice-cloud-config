@@ -3,3 +3,9 @@ server:
 spring:
  application:
   name: microservice-cloud-config-dev
+---
+server:
+ port: 50002
+spring:
+ application:
+  name: microservice-cloud-config-test
