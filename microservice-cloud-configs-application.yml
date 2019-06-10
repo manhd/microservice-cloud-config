@@ -3,7 +3,7 @@ spring:
    active: dev
 ---
 server:
-  port: 50001
+  port: 5001
 spring:
   profiles: dev
   applications:
