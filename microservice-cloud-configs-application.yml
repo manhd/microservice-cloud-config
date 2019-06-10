@@ -1,0 +1,18 @@
+spring:
+  profiles:
+   active: dev
+---
+server:
+  port: 50001
+spring:
+  profiles: dev
+  applications:
+    name:microservice-cloud-configs-dev
+
+---
+server:
+  port: 5002
+spring:
+  profiles: test
+  applications:
+    name: microservice-cloud-configs-test
