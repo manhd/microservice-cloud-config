@@ -7,7 +7,7 @@ server:
 spring:
   profiles: dev
   applications:
-    name:microservice-cloud-configs-dev
+    name: microservice-cloud-configs-dev
 
 ---
 server:
