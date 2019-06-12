@@ -1,0 +1,18 @@
+spring:
+  profiles:
+   active: dev
+---
+server:
+  port: 33333
+spring:
+  profiles: dev
+  application:
+    name: microservice-hystrix-dashboar-dev
+
+---
+server:
+  port: 33333
+spring:
+  profiles: test
+  applications:
+    name: microservice-hystrix-dashboar-test
