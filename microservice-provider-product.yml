@@ -13,7 +13,7 @@ mybatis:
 spring:
   application:
   profiles: dev
-    name: microservice-provider-product-hystrix-dev #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: microservice-provider-product-dev #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.jdbc.Driver             # mysql驱动包
@@ -57,7 +57,7 @@ mybatis:
 spring:
   application:
   profiles: test
-    name: microservice-provider-product-hystrix-test #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: microservice-provider-product-test #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.jdbc.Driver             # mysql驱动包
