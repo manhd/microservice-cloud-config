@@ -7,7 +7,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: microservice-hystrix-dashboar-dev
+    name: microservice-hystrix-dashboar
 
 ---
 server:
@@ -15,4 +15,4 @@ server:
 spring:
   profiles: test
   applications:
-    name: microservice-hystrix-dashboar-test
+    name: microservice-hystrix-dashboar
