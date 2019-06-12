@@ -12,7 +12,6 @@ mybatis:
 
 spring:
   application:
-  profiles: dev
     name: microservice-provider-product-dev #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
@@ -35,16 +34,8 @@ eureka:
       #defaultZone: http://localhost:32233/eureka
       defaultZone: http://eureka32231.com:32231/eureka,http://eureka32232.com:32232/eureka
   instance:
-    instance-id: ${spring.application.name}:${server.port}-hystrix
+    instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true # 访问路径就会显示为IP
-
-#在被监控上面暴露端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
-
 ---
 server:
   port: 32531
@@ -56,7 +47,6 @@ mybatis:
 
 spring:
   application:
-  profiles: test
     name: microservice-provider-product-test #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
@@ -79,13 +69,5 @@ eureka:
       #defaultZone: http://localhost:32233/eureka
       defaultZone: http://eureka32231.com:32231/eureka,http://eureka32232.com:32232/eureka
   instance:
-    instance-id: ${spring.application.name}:${server.port}-hystrix
+    instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true # 访问路径就会显示为IP
-
-#在被监控上面暴露端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
-
