@@ -7,7 +7,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: microservice-consumer-product
+    name: microservice-consumer-product-feign
 #eureka 配置
 eureka:
   client:
@@ -28,7 +28,7 @@ server:
 spring:
   profiles: test
   application:
-    name: microservice-consumer-product
+    name: microservice-consumer-product-feign
 #eureka 配置
 eureka:
   client:
