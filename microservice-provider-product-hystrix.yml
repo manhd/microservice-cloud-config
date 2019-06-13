@@ -29,13 +29,6 @@ spring:
     port: 5672 #客户端连接端口
     username: guest
     password: manhd123.
-
-# 暴露出发消息的总线地址
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 #eureka 配置
 eureka:
   client:
