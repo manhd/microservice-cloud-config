@@ -24,18 +24,11 @@ spring:
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
   
- rabbitmq:
-   host: localhost
-   port: 5672 #客户端连接端口
-   username: guest
-   password: manhd123.
-
-# 暴露出发消息的总线地址
-management:
-  endpoints:
-    web:
-      exposure:
-        include: bus-refresh,hystrix.stream
+  rabbitmq:
+    host: localhost
+    port: 5672 #客户端连接端口
+    username: guest
+    password: manhd123.
 #eureka 配置
 eureka:
   client:
@@ -47,6 +40,12 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${server.port}-hystrix
     prefer-ip-address: true # 访问路径就会显示为IP
+#在被监控上面暴露端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 ---
 server:
@@ -82,6 +81,11 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}-hystrix
     prefer-ip-address: true # 访问路径就会显示为IP
 #在被监控上面暴露端点
+    rabbitmq:
+    host: localhost
+    port: 5672 #客户端连接端口
+    username: guest
+    password: manhd123.
 management:
   endpoints:
     web:
