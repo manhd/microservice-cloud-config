@@ -10,14 +10,14 @@ spring:
     name: microservice-cloud-eureka-one
 eureka:
   instance:
-    hostname: 192.168.10.11 #eureka 服务端的实例名称
+    hostname: eureka32232.com #eureka 服务端的实例名称
   client:
     register-with-eureka: false #服务注册 false 表示不向eureka 服务注册自己
     fetch-registry: false #服务发现 false 表示自己不从eureka 服务中获取注册信息
     service-url: #eureka 客户端与eureka 服务端的交互地址，集群版配置对方的地址   单机版配置自己的信息
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       #集群版
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/,http://${eureka.instance.hostname}:32231/eureka/
+      defaultZone: http://eureka32231.com:32231/eureka/,http://eureka32232.com:32232/eureka/
   server: # eureka  自我保护机制关闭（默认开启）
     enable-self-preservation: false
 ---
@@ -29,13 +29,13 @@ spring:
     name: microservice-cloud-eureka-one
 eureka:
   instance:
-    hostname: 192.168.10.11 #eureka 服务端的实例名称
+    hostname: eureka32232.com #eureka 服务端的实例名称
   client:
     register-with-eureka: false #服务注册 false 表示不向eureka 服务注册自己
     fetch-registry: false #服务发现 false 表示自己不从eureka 服务中获取注册信息
     service-url: #eureka 客户端与eureka 服务端的交互地址，集群版配置对方的地址   单机版配置自己的信息
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       #集群版
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka32231.com:32231/eureka/,http://eureka32232.com:32232/eureka/
   server: # eureka  自我保护机制关闭（默认开启）
     enable-self-preservation: true
