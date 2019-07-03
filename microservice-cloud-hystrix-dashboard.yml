@@ -13,6 +13,6 @@ spring:
 server:
   port: 33333
 spring:
-  profiles: test
+  profiles: prod
   applications:
     name: microservice-hystrix-dashboard

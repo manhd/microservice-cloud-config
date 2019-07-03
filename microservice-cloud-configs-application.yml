@@ -13,6 +13,6 @@ spring:
 server:
   port: 5002
 spring:
-  profiles: test
+  profiles: prod
   applications:
     name: microservice-cloud-configs-test

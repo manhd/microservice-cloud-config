@@ -43,7 +43,7 @@ server:
   port: 32235
 
 spring:
-  profiles: test
+  profiles: prod
   application:
     name: microservice-zuul-gateway
 
@@ -54,7 +54,7 @@ eureka:
     fetch-registry: true #是否获取其他服务的信息
     service-url: #eureka 注册中心的地址，需要注册到哪一个注册中心
       #defaultZone: http://localhost:32233/eureka
-      defaultZone: http://eureka32231.com:32231/eureka,http://eureka32232.com:32232/eureka
+      defaultZone: http://119.3.0.139:32231/eureka,http://119.3.0.139:32232/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}  #指定实例ID,就不会显示主机名了
     prefer-ip-address: true #访问路径可以显示Ip 地址

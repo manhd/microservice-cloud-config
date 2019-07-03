@@ -1,5 +1,0 @@
-﻿server:
-  port: 50001
-spring:
-  applications:
-    name: microservice-cloud-config-dev

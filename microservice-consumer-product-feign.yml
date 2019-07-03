@@ -8,6 +8,15 @@ spring:
   profiles: dev
   application:
     name: microservice-consumer-product-feign
+  kafka:
+    consumer:
+      bootstrap-servers: 119.3.0.139:9092
+      group-id: test-consumer-group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 #eureka 配置
 eureka:
   client:
@@ -26,9 +35,18 @@ feign:
 server:
   port: 32332
 spring:
-  profiles: test
+  profiles: prod
   application:
     name: microservice-consumer-product-feign
+  kafka:
+    consumer:
+      bootstrap-servers: 119.3.0.139:9092
+      group-id: test-consumer-group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 #eureka 配置
 eureka:
   client:
@@ -36,7 +54,7 @@ eureka:
     fetch-registry: true #是否获取其他服务的信息
     service-url: #eureka 注册中心的地址，需要注册到哪一个注册中心
       #defaultZone: http://localhost:32233/eureka
-      defaultZone: http://eureka32231.com:32231/eureka,http://eureka32232.com:32232/eureka
+      defaultZone: http://119.3.0.139/eureka,http://119.3.0.139:32232/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}
     prefer-ip-address: true # 访问路径就会显示为IP

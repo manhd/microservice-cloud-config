@@ -1,5 +1,0 @@
-﻿server:
-  port: 50002
-spring:
-  applications:
-    name: microservice-cloud-config-test

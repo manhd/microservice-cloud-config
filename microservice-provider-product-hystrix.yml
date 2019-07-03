@@ -24,6 +24,27 @@ spring:
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
   
+  # kafka  消息队列
+  kafka:
+    bootstrap-servers: 119.3.0.139:9092
+    producer:
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  #redis 缓存
+  redis:
+    database: 0 #数据库索引默认为0
+    host: 119.3.0.139
+    port: 6379
+    password: manhd123.
+    pool:
+      max-active: 200 # 连接池最大连接数（使用负值表示没有限制）
+      max-wait: -1  # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      max-idle: 10  # 连接池中的最大空闲连接
+      min-idle: 0  # 连接池中的最小空闲连接
+    timeout: 1000 # 连接超时时间（毫秒）
+    
   rabbitmq:
     host: localhost
     port: 5672 #客户端连接端口
@@ -55,20 +76,42 @@ mybatis:
   type-aliases-package: com.haidm.spring.cn.entities  # 所有Entity别名类所在包
   mapper-locations: classpath:mybatis/mapper/**/*.xml       # mapper映射文件
 spring:
-  profiles: test
+  profiles: prod
   application:
     name: microservice-provider-producd-hystrix #这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.jdbc.Driver             # mysql驱动包
-    url: jdbc:mysql://127.0.0.1:3306/springcloud_db02?serverTimezone=GMT%2B8  # 数据库名称
+    url: jdbc:mysql://119.3.0.139:3306/springcloud_db02?serverTimezone=GMT%2B8  # 数据库名称
     username: root
-    password: qwerasdf
+    password: mysql123.
     dbcp2:
       min-idle: 5                                # 数据库连接池的最小维持连接数
       initial-size: 5                            # 初始化连接数
       max-total: 5                               # 最大连接数
       max-wait-millis: 150                       # 等待连接获取的最大超时时间
+      
+  # kafka  消息队列
+  kafka:
+    bootstrap-servers: 119.3.0.139:9092
+    producer:
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  #redis 缓存
+  redis:
+    database: 0 #数据库索引默认为0
+    host: 119.3.0.139
+    port: 6379
+    password: redis123.
+    pool:
+      max-active: 200 # 连接池最大连接数（使用负值表示没有限制）
+      max-wait: -1  # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      max-idle: 10  # 连接池中的最大空闲连接
+      min-idle: 0  # 连接池中的最小空闲连接
+    timeout: 1000 # 连接超时时间（毫秒）
+    
 # rqbbitmq 服务连接
   rabbitmq:
    host: localhost
@@ -82,7 +125,7 @@ eureka:
     fetch-registry: true #是否获取其他服务的信息
     service-url: #eureka 注册中心的地址，需要注册到哪一个注册中心
       #defaultZone: http://localhost:32233/eureka
-      defaultZone: http://eureka32231.com:32231/eureka,http://eureka32232.com:32232/eureka
+      defaultZone: http://119.3.0.139:32231/eureka,http://119.3.0.139:32232/eureka
   instance:
     instance-id: ${spring.application.name}:${server.port}-hystrix
     prefer-ip-address: true # 访问路径就会显示为IP
